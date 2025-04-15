@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import './App.css';
+import Dashboard from './components/Dashboard/Dashboard';
+import EnhancedLandingPage from './components/Landing/EnhancedLandingPage';
+import IntroAnimation from './components/Animations/IntroAnimation';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [showDashboard, setShowDashboard] = useState(false);
+
+  useEffect(() => {
+    // Simulate loading time for the intro animation
+    const timer = setTimeout(() => setLoading(false), 3500); // Extended for the owl animation
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleDemoClick = () => {
+    setShowDashboard(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="app">
+      {loading ? (
+        <IntroAnimation />
+      ) : (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
         >
-          Learn React
-        </a>
-      </header>
+          {showDashboard ? (
+            <Dashboard />
+          ) : (
+            <EnhancedLandingPage onDemoClick={handleDemoClick} />
+          )}
+        </motion.div>
+      )}
     </div>
   );
 }
