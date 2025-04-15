@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './Layout.css';
 
-const Header = () => {
+const Header = ({ onDemoClick }) => {
   const [language, setLanguage] = useState('en');
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -45,6 +45,7 @@ const Header = () => {
             <li><a href="#case-studies">Case Studies</a></li>
             <li><a href="#blog">Resources</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li className="demo-nav-item"><a href="#" onClick={onDemoClick} className="demo-link">Try Demo</a></li>
           </ul>
         </nav>
 

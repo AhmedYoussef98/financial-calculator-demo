@@ -15,6 +15,10 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleBackClick = () => {
+    setShowDashboard(false);
+  };
+
   const handleDemoClick = () => {
     setShowDashboard(true);
   };
@@ -30,7 +34,7 @@ function App() {
           transition={{ duration: 1 }}
         >
           {showDashboard ? (
-            <Dashboard />
+            <Dashboard onBackClick={handleBackClick} />
           ) : (
             <EnhancedLandingPage onDemoClick={handleDemoClick} />
           )}

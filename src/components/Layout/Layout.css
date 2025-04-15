@@ -206,3 +206,39 @@
     font-size: 20px;
   }
 }
+
+/* Demo button styles */
+.demo-nav-item {
+  background-color: rgba(48, 87, 185, 0.1);
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
+.demo-link {
+  color: #3057B9 !important;
+  font-weight: 600 !important;
+}
+
+.floating-demo-button {
+  position: fixed;
+  bottom: 30px;
+  right: 100px;
+  z-index: 999;
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 0 rgba(48, 87, 185, 0.4);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(48, 87, 185, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(48, 87, 185, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(48, 87, 185, 0);
+  }
+}

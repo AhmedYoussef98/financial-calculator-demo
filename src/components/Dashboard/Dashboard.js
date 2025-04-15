@@ -14,7 +14,7 @@ import InvestmentModule from '../Investment/InvestmentModule';
 import OperationsModule from '../Operations/OperationsModule';
 import FinancialsModule from '../Financials/FinancialsModule';
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   const [activeModule, setActiveModule] = useState('overview');
   const [cafeData, setCafeData] = useState({
     name: 'My Dream Café',
@@ -84,21 +84,28 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
-        <motion.h1 
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          CaféCalc Pro: {cafeData.name}
-        </motion.h1>
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <button className="btn btn-primary">Generate Report</button>
-        </motion.div>
-      </div>
+  <motion.div 
+    className="header-left"
+    initial={{ opacity: 0, x: -20 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5 }}
+  >
+    <button 
+      className="back-button" 
+      onClick={props.onBackClick}
+    >
+      ← Back to Home
+    </button>
+    <h1>CaféCalc Pro: {cafeData.name}</h1>
+  </motion.div>
+  <motion.div
+    initial={{ opacity: 0, x: 20 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5 }}
+  >
+    <button className="btn btn-primary">Generate Report</button>
+  </motion.div>
+</div>
       
       <div className="dashboard-content">
         <motion.div 

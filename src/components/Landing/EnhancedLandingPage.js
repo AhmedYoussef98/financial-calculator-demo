@@ -12,11 +12,89 @@ import './Landing.css';
 const EnhancedLandingPage = ({ onDemoClick }) => {
   return (
     <div className="enhanced-landing-page">
-      <Header />
+      <Header onDemoClick={onDemoClick} />
       
       <main>
         <EnhancedHeroSection />
         <ValueProposition />
+
+        <section id="demo-preview" className="demo-preview-section">
+          <div className="section-container">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="section-header"
+            >
+              <h2>Try Our Café Feasibility Calculator</h2>
+              <p>See if your dream café will be profitable before investing a single dollar</p>
+            </motion.div>
+
+            <div className="demo-preview-container">
+              <div className="demo-preview-content">
+                <h3>Comprehensive Café Business Analysis</h3>
+                <ul className="demo-feature-list">
+                  <li>Input your investment costs and see the breakdown</li>
+                  <li>Model daily operations and customer flow</li>
+                  <li>Calculate profit margins and break-even points</li>
+                  <li>Receive AI-powered optimization insights</li>
+                  <li>Test different scenarios to maximize profitability</li>
+                </ul>
+                <button className="primary-button" onClick={onDemoClick}>
+                  Launch Interactive Demo
+                </button>
+              </div>
+              <div className="demo-preview-image">
+                <img src="https://via.placeholder.com/600x400?text=Cafe+Calculator+Demo" alt="Café Calculator Preview" />
+                <div className="demo-badge">Interactive Demo</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="demo-preview" className="demo-preview-section">
+          <div className="section-container">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="section-header"
+            >
+              <h2>Try Our Café Feasibility Calculator</h2>
+              <p>See if your dream café will be profitable before investing a single dollar</p>
+            </motion.div>
+
+            <div className="demo-preview-container">
+              <div className="demo-preview-content">
+                <h3>Comprehensive Café Business Analysis</h3>
+                <ul className="demo-feature-list">
+                  <li>Input your investment costs and see the breakdown</li>
+                  <li>Model daily operations and customer flow</li>
+                  <li>Calculate profit margins and break-even points</li>
+                  <li>Receive AI-powered optimization insights</li>
+                  <li>Test different scenarios to maximize profitability</li>
+                </ul>
+                <button className="primary-button" onClick={onDemoClick}>
+                  Launch Interactive Demo
+                </button>
+                    <div className="floating-demo-button">
+        <button 
+          className="primary-button pulse-animation" 
+          onClick={onDemoClick}
+        >
+          Try Café Demo
+        </button>
+      </div>
+    </div>
+              <div className="demo-preview-image">
+                <img src="https://via.placeholder.com/600x400?text=Cafe+Calculator+Demo" alt="Café Calculator Preview" />
+                <div className="demo-badge">Interactive Demo</div>
+              </div>
+            </div>
+          </div>
+        </section>
         <FeaturedCalculators />
         
         <section id="live-calculator" className="calculator-section">
@@ -32,7 +110,15 @@ const EnhancedLandingPage = ({ onDemoClick }) => {
               <p>Try it yourself and see how our tools can transform your financial planning</p>
             </motion.div>
             <Calculator />
-          </div>
+                <div className="floating-demo-button">
+        <button 
+          className="primary-button pulse-animation" 
+          onClick={onDemoClick}
+        >
+          Try Café Demo
+        </button>
+      </div>
+    </div>
         </section>
         
         <Testimonials />

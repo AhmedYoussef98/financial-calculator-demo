@@ -271,3 +271,27 @@ body {
   font-size: 1.5rem;
   color: #dcdde1;
 }
+
+/* Back button styles */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.back-button {
+  padding: 8px 16px;
+  background-color: transparent;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #4a5568;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #f7fafc;
+  color: #3057B9;
+  border-color: #3057B9;
+}
